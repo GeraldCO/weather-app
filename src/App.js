@@ -39,7 +39,7 @@ function App() {
                 daily= {results[1].daily}
             />
             {console.log(results)}
-            {/* <TodayWeather results={results} /> */}
+             <TodayWeather results={results} /> 
             
             
         </div>
