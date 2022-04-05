@@ -21,11 +21,18 @@ const getCoords = async function (url) {
     coord.country = weatherData.sys.country;
     //  console.log(weatherData);
     //  console.log(weatherData.weather);
-    console.log(coord);
+//    console.log(coord);
     return coord;
-  }
+}
+
+const createURL = async function(coords, temperatureDegreeUnits){
+  return `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=1e4a89c7477a829ee12ab9437c6de27d&units=${temperatureDegreeUnits}`
+}
+
+
 
 export {
    getDayName,
-   getCoords
+   getCoords,
+   createURL
 }

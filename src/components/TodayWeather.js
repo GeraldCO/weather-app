@@ -2,14 +2,14 @@ import React from 'react'
 
 export default function TodayWeather({results}){
     return(
-        <div>
-            <div className="list-group list-group-flush list-group-horizontal " >
+        <div className='col-md-12 order-md-5 mt-5'>
+            <div className="list-group list-group-horizontal list-group-flush justify-content-between px-0 py-md-0 border-bottom text-center day-header" >
                 <li className="list-group-item"> 
                     <small className='text-muted'>
                     Sunrise
                         </small>
                     <h5>
-                        { new Date( results[1].current.sunrise * 1000).getHours()}:{ new Date( results[1].current.sunset * 1000).getMinutes()}     
+                        { new Date( results.current.sunrise * 1000).getHours()}:{ new Date( results.current.sunset * 1000).getMinutes()}     
                     </h5>
                 </li>
                 <li className="list-group-item">
@@ -17,7 +17,7 @@ export default function TodayWeather({results}){
                         Sunset
                     </small> 
                     <h5>
-                    { new Date( results[1].current.sunset * 1000).getHours()}:{ new Date( results[1].current.sunset * 1000).getMinutes()}          
+                    { new Date( results.current.sunset * 1000).getHours()}:{ new Date( results.current.sunset * 1000).getMinutes()}          
                     </h5>
                 </li>
                 <li className="list-group-item">
@@ -25,7 +25,7 @@ export default function TodayWeather({results}){
                         Chance of rain
                     </small>
                     <h5>
-                        { Math.round(results[1].hourly[0].pop * 100)}%
+                        { Math.round(results.hourly[0].pop * 100)}%
                         
                     </h5>
                 </li>
@@ -34,7 +34,7 @@ export default function TodayWeather({results}){
                         Humidity
                     </small>
                     <h5>
-                        {results[1].current.humidity}% 
+                        {results.current.humidity}% 
                     </h5>
                 </li>
                 <li className="list-group-item"> 
@@ -42,17 +42,17 @@ export default function TodayWeather({results}){
                         Wind 
                     </small>
                     <h5>
-                        {results[1].current.wind_speed} Km/h 
+                        {results.current.wind_speed} Km/h 
                     </h5>
                 </li>
             </div>
-            <div className="list-group list-group-flush list-group-horizontal " >
+            <div className="list-group list-group-horizontal list-group-flush justify-content-between px-0 py-md-0 border-bottom text-center day-header" >
                 <li className='list-group-item'>  
                     <small className='text-muted'>
                         Feels Like
                     </small>
                     <h5>
-                        {results[1].current.feels_like}°
+                        {results.current.feels_like}°
                     </h5>
                </li>
                 <li className='list-group-item'> 
@@ -60,7 +60,7 @@ export default function TodayWeather({results}){
                         Temp
                     </small>  
                     <h5>
-                        {results[1].daily[0].temp.day}° 
+                        {results.daily[0].temp.day}° 
                     </h5>
                 </li>
                 <li className='list-group-item'> 
@@ -68,7 +68,7 @@ export default function TodayWeather({results}){
                         Pressure
                     </small> 
                     <h5>
-                        {results[1].current.pressure} hPa
+                        {results.current.pressure} hPa
                     </h5>
                  </li>
                 <li className='list-group-item'> 
@@ -76,7 +76,7 @@ export default function TodayWeather({results}){
                         Visibility
                     </small>
                     <h5>
-                        {(results[1].current.visibility)/100}Km
+                        {(results.current.visibility)/100}Km
                     </h5>
                 </li>
                 <li className='list-group-item'> 
@@ -84,7 +84,7 @@ export default function TodayWeather({results}){
                         UV index
                     </small>  
                     <h5>
-                        {results[1].current.uvi}
+                        {results.current.uvi}
                     </h5>
                 </li>
             </div>
